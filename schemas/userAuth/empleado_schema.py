@@ -22,7 +22,6 @@ def insert_empleado_schema(item)->dict:
         'date_register':item['date_register'],
         'last_login':item['last_login'],
         'is_active':item['is_active'],
-        'id_persona':item['id_per'],
         'id_departamento':item['id_departamento']
     }
 

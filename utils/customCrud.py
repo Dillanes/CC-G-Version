@@ -20,7 +20,12 @@ class CrudFunctions():
                 return conn[nameDocument].find_one({'_id':ObjectId(id)})
             new_register = jsonable_encoder(register)
             return conn[nameDocument].find_one({'email':new_register['email']})
-        
+
+
+    def get_single_register_to_identify(nameDocument:str,register=None,where:str='somewhere'):            
+            new_register = jsonable_encoder(register)
+            return conn[nameDocument].find_one({'identificador':new_register['identificador']})
+
 
     def post_register(nameDocument:str,body,with_id:bool=False):
         new_resgister = jsonable_encoder(body)

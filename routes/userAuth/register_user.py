@@ -56,21 +56,18 @@ def register_user(body:register_user_model):
     print('**********',persona)
     print('**********',empleado)
     print('**********',colonia)
-
-    return CustomMessage(resiveStatus=201, detailMessagge='Correct')
-
-
-    # id_colonia = CrudFunctions.post_register('colonia',colonia,True)
-    # if id_colonia is None:
-    #     CustomMessage(400,msg.msg_error_add,Where='Register user',method='post')
-    # persona['id_colonia'] = str(id_colonia) 
-    # id_person = CrudFunctions.post_register('persona',persona,True)
-    # if id_person is None:
-    #     CustomMessage(400,msg.msg_error_add,Where='Register user',method='post')
-    # empleado['id_per'] = str(id_person)
-    # empleado['password'] = pbkdf2_sha256.hash(empleado['password'])
-    # id_empleado = CrudFunctions.post_register('empleado',empleado,True)
-    # if id_empleado is None:
-    #     CustomMessage(400,msg.msg_error_add,Where='empleado',method='post')
-    # return CustomMessage(201,detailMessagge=msg.msg_add,data={'_id':str(id_empleado)},Where='registerUser',method='post')
+    # return CustomMessage(resiveStatus=201, detailMessagge='Correct')
+    id_colonia = CrudFunctions.post_register('colonia',colonia,True)
+    if id_colonia is None:
+        CustomMessage(400,msg.msg_error_add,Where='Register user',method='post')
+    persona['id_colonia'] = str(id_colonia) 
+    id_person = CrudFunctions.post_register('persona',persona,True)
+    if id_person is None:
+        CustomMessage(400,msg.msg_error_add,Where='Register user',method='post')
+    empleado['id_per'] = str(id_person)
+    empleado['password'] = pbkdf2_sha256.hash(empleado['password'])
+    id_empleado = CrudFunctions.post_register('empleado',empleado,True)
+    if id_empleado is None:
+        CustomMessage(400,msg.msg_error_add,Where='empleado',method='post')
+    return CustomMessage(201,detailMessagge=msg.msg_add,data={'_id':str(id_empleado)},Where='registerUser',method='post')
 

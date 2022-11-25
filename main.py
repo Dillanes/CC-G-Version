@@ -30,6 +30,8 @@ app =  FastAPI(
 #white list
 origins = [
     "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost",
     "http://localhost:8000"
 ]
 
@@ -46,6 +48,26 @@ app.add_middleware(
 
 #rutes authUser
 app.include_router(all_routes.userRegiter)
+app.include_router(all_routes.login)
+
+
+#RUTAS CONCRETO PREMEZCLADO
+app.include_router(all_routes.concretoPremezclado)
+app.include_router(all_routes.adictivo)
+app.include_router(all_routes.edadResistencia)
+app.include_router(all_routes.resistenciaConcreto)
+app.include_router(all_routes.moduloElasticidad)
+app.include_router(all_routes.densidadConcreto)
+app.include_router(all_routes.contraccionSecado)
+app.include_router(all_routes.fibra)
+app.include_router(all_routes.TMA)
+app.include_router(all_routes.revenimiento)
+app.include_router(all_routes.agregado)
+app.include_router(all_routes.colocacionConcreto)
+app.include_router(all_routes.permeabilidadIonCloruro)
+app.include_router(all_routes.claseExposicion)
+app.include_router(all_routes.cemento)
+app.include_router(all_routes.colorConcreto)
 
 
 #configurate static files*******

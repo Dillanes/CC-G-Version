@@ -1,6 +1,6 @@
 def insert_colonia_schema(item)->dict:
     return {
-        'colonia':item['nombre_col'],
+        'colonia':item['colonia'],
         'calle':item['calle'],
         'no_int':item['no_int'],
         'no_ext':item['no_ext'],
@@ -10,7 +10,7 @@ def insert_colonia_schema(item)->dict:
 def colonia_schema(item)->dict:
     return {
         '_id':item['_id'],
-        'colonia':item['nombre_col'],
+        'colonia':item['colonia'],
         'calle':item['calle'],
         'no_int':item['no_int'],
         'no_ext':item['no_ext'],
