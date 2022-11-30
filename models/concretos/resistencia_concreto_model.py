@@ -8,7 +8,6 @@ class resistencia_concreto_model(BaseModel):
     PSI :int = Field(...)
     KSI : float = Field(...)
     tipoResistencia :str = Field(...,min_length=3,max_length=255)
-    clase:Optional[str] = Field(min_length=3, max_length=50)
 
     class Config:
         anystr_strip_whitespace= True

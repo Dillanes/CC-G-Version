@@ -2,6 +2,15 @@ from pydantic import BaseModel,Field,validator
 from typing import Optional
 from bson import ObjectId
 
+class concreto_premezclado_modelDef (BaseModel):
+    codigoOmniclass:str = Field(...)
+    codigoCyC:str = Field(...)
+    desCorta:str = Field(...)
+    fk_resitenciaCompresion:str = Field(...)
+    fk_moduloElasticidad:str = Field(...)
+    fk_edadResistencia:str = Field(...)
+
+
 
 class concreto_premezclado_model(BaseModel):
     codigoOmniclass:str = Field(...)
@@ -50,6 +59,7 @@ class concreto_premezclado_model(BaseModel):
         raise ValueError('Id no valido')
 
     
+
 
 
 

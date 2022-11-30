@@ -1,7 +1,9 @@
 from pymongo import MongoClient
+from config.config_env import Settings
 
+env_var =  Settings()
 #conexion local in default
-conexion = MongoClient('mongodb+srv://consulting:C&C*20221@clusterbases.f92n1fx.mongodb.net/test')
+conexion = MongoClient(env_var.URI)
 
 #get db azureCorregida
 conn = conexion.productosSeparados

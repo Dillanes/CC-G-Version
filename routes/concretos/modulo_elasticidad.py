@@ -20,7 +20,7 @@ moduloElasticidad = APIRouter(
 @moduloElasticidad.get('/',name='moduloElasticidad',description='get all adictivos',response_model=response_petition_model)
 async def get_all_register():
     try:
-        data = CrudFunctions.get_all_register('moduloElasticidad')
+        data = CrudFunctions.get_all_register('23_13311300000000_03')
         result = all_register(data)
         return CustomMessage(200,msg.msg_get,result) 
     except:
@@ -30,7 +30,7 @@ async def get_all_register():
 @moduloElasticidad.get('/{id}',name='moduloElasticidad',description='get all adictivos',response_model=response_petition_model)
 def get_one_register(id:str):
     try:
-        data = CrudFunctions.get_single_register('moduloElasticidad',id,where='moduloElasticidad')
+        data = CrudFunctions.get_single_register('23_13311300000000_03',id,where='moduloElasticidad')
         return CustomMessage(200,msg.msg_get,id_str(data))
     except:
         CustomMessage(400,'id no valido')
@@ -39,7 +39,7 @@ def get_one_register(id:str):
 @moduloElasticidad.post('/',description='post item', name='post item',response_model=response_petition_model)
 def post_regsiter(item:modulo_elasticidad_model):
     try:
-        id =  CrudFunctions.post_register('moduloElasticidad',item,True)
+        id =  CrudFunctions.post_register('23_13311300000000_03',item,True)
         return CustomMessage(201,msg.msg_add,{'_id':str(id)},'moduloElasticidad')
     except:
         CustomMessage(400,'id no valido')
@@ -47,7 +47,7 @@ def post_regsiter(item:modulo_elasticidad_model):
 @moduloElasticidad.put('/{id}',description='put item', name='put item',response_model=response_petition_model)
 def put_register(id:str,body:modulo_elasticidad_model):
     try:
-        item  = CrudFunctions.put_register('moduloElasticidad',id,body,'moduloElasticidad')
+        item  = CrudFunctions.put_register('23_13311300000000_03',id,body,'moduloElasticidad')
         print('*************',item)
         return CustomMessage(200,msg.msg_update)
     except:
@@ -58,7 +58,7 @@ def put_register(id:str,body:modulo_elasticidad_model):
 @moduloElasticidad.delete('/{id}',name='moduloElasticidad',description='get all adictivos',response_model=response_petition_model)
 def get_one_register(id:str):
     try:
-        data = CrudFunctions.delete_register('moduloElasticidad',id,True,where='moduloElasticidad')
+        data = CrudFunctions.delete_register('23_13311300000000_03',id,True,where='moduloElasticidad')
         if data > 0:
             return CustomMessage(200,msg.msg_delete)
         CustomMessage(400,'No su pudo eliminar')

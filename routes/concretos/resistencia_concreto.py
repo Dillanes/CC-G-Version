@@ -20,7 +20,7 @@ resistenciaConcreto = APIRouter(
 @resistenciaConcreto.get('/',name='resistenciaConcreto',description='get all adictivos',response_model=response_petition_model)
 async def get_all_register():
     try:
-        data = CrudFunctions.get_all_register('resistenciaConcreto')
+        data = CrudFunctions.get_all_register('23_13311300000000_02')
         result = all_register(data)
         return CustomMessage(200,msg.msg_get,result) 
     except:
@@ -30,7 +30,7 @@ async def get_all_register():
 @resistenciaConcreto.get('/{id}',name='resistenciaConcreto',description='get all adictivos',response_model=response_petition_model)
 def get_one_register(id:str):
     try:
-        data = CrudFunctions.get_single_register('resistenciaConcreto',id,where='resistenciaConcreto')
+        data = CrudFunctions.get_single_register('23_13311300000000_02',id,where='resistenciaConcreto')
         return CustomMessage(200,msg.msg_get,id_str(data))
     except:
         CustomMessage(400,'id no valido')
@@ -39,15 +39,16 @@ def get_one_register(id:str):
 @resistenciaConcreto.post('/',description='post item', name='post item',response_model=response_petition_model)
 def post_regsiter(item:resistencia_concreto_model):
     try:
-        id =  CrudFunctions.post_register('resistenciaConcreto',item,True)
+        id =  CrudFunctions.post_register('23_13311300000000_02',item,True)
         return CustomMessage(201,msg.msg_add,{'_id':str(id)},'resistenciaConcreto')
     except:
         CustomMessage(400,'id no valido')
 
+
 @resistenciaConcreto.put('/{id}',description='put item', name='put item',response_model=response_petition_model)
 def put_register(id:str,body:resistencia_concreto_model):
     try:
-        item  = CrudFunctions.put_register('resistenciaConcreto',id,body,'resistenciaConcreto')
+        item  = CrudFunctions.put_register('23_13311300000000_02',id,body,'resistenciaConcreto')
         print('*************',item)
         return CustomMessage(200,msg.msg_update)
     except:
@@ -58,7 +59,7 @@ def put_register(id:str,body:resistencia_concreto_model):
 @resistenciaConcreto.delete('/{id}',name='resistenciaConcreto',description='get all adictivos',response_model=response_petition_model)
 def get_one_register(id:str):
     try:
-        data = CrudFunctions.delete_register('resistenciaConcreto',id,True,where='resistenciaConcreto')
+        data = CrudFunctions.delete_register('23_13311300000000_02',id,True,where='resistenciaConcreto')
         if data > 0:
             return CustomMessage(200,msg.msg_delete)
         CustomMessage(400,'No su pudo eliminar')

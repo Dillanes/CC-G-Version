@@ -19,4 +19,12 @@ from .concretos.colocacion import colocacionConcreto
 from .concretos.permeabilidad_ion_cloruro import permeabilidadIonCloruro
 from .concretos.clase_exposicion import claseExposicion
 from .concretos.cemento import cemento
+from .concretos.resistenciaCompresion import resistenciaCompresion
 from .concretos.color_concreto import colorConcreto
+from .omc23Niveles.omc23_n1 import omniclasNivel1
+from .omc23Niveles.omc23_n2 import omniclasNivel2
+from .omc23Niveles.omc23_n3 import omniclasNivel3
+from .omc23Niveles.omc23_n4 import omniclasNivel4
+from .omc23Niveles.omc23_n5 import omniclasNivel5
+from .omc23Niveles.omc23_n6 import omniclasNivel6
+from .omc23Niveles.omc23_n7 import omniclasNivel7

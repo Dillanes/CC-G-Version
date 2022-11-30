@@ -22,10 +22,11 @@ app =  FastAPI(
     openapi_url='/api/v1/openapi.json', #route for do open api in format json  
     docs_url="/docs", #route for docts
     redoc_url="/redoct", 
-
 )
 
 #middleaware for cross origins**************
+
+
 
 #white list
 origins = [
@@ -68,6 +69,19 @@ app.include_router(all_routes.permeabilidadIonCloruro)
 app.include_router(all_routes.claseExposicion)
 app.include_router(all_routes.cemento)
 app.include_router(all_routes.colorConcreto)
+app.include_router(all_routes.resistenciaCompresion)
+
+
+
+
+#OMNICLASS 23 NIVELES
+app.include_router(all_routes.omniclasNivel1)
+app.include_router(all_routes.omniclasNivel2)
+app.include_router(all_routes.omniclasNivel3)
+app.include_router(all_routes.omniclasNivel4)
+app.include_router(all_routes.omniclasNivel5)
+app.include_router(all_routes.omniclasNivel6)
+app.include_router(all_routes.omniclasNivel7)
 
 
 #configurate static files*******
