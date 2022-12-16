@@ -26,15 +26,17 @@ class jwtBearer(HTTPBearer):
             CustomMessage(401,'invalid or Expired Token 2!')
 
     def verify_jwt(self,jwtoken:str,method:str):
-        print('*******************VERIFY_TOKEN',self)
         isTokenValid: bool = False #A false flag
         payload = decodeJWT(jwtoken)
         print('***********************payload',payload)
+        if payload is None: 
+            return False
         if not Authorization_rol(method,payload['cargo']):
             CustomMessage(resiveStatus=401,detailMessagge="You're not authorized to realize this action",method=method,user=payload['_id'],Where='valide token')
         # if not :
         #     CustomMessage(400,"You're not authorized to realize this action")
         # print('********************payload',payload)
+
         if payload:
             isTokenValid = True
         return isTokenValid
